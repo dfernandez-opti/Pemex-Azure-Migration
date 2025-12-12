@@ -250,32 +250,58 @@ jobs:
       
       - name: Prepare Subscription for Deployment
         run: |
-          echo "Checking subscription management group assignment..."
+          echo "=========================================="
+          echo "Preparing Subscription for Deployment"
+          echo "=========================================="
           SUBSCRIPTION_ID="${{ env.AZURE_SUBSCRIPTION_ID }}"
           TENANT_ROOT_GROUP_ID="23285b8c-1596-4f14-adc2-fd472cc70cc8"
           TARGET_MG="Pemex-platform"
           
-          # Get current management group
-          CURRENT_MG=$(az account management-group subscription show \
-            --name "$TARGET_MG" \
-            --subscription "$SUBSCRIPTION_ID" \
-            --query "id" -o tsv 2>/dev/null || echo "")
+          # Check all Management Groups and remove subscription from any that contain it
+          echo "Checking all Management Groups for subscription assignment..."
+          ALL_MGS=$(az account management-group list --query "[?name!='$TENANT_ROOT_GROUP_ID'].name" -o tsv)
           
-          # If subscription is already in Pemex-platform, move it to Tenant Root Group first
-          # This prevents conflicts when the template tries to move it
-          if [ -n "$CURRENT_MG" ] && [[ "$CURRENT_MG" == *"$TARGET_MG"* ]]; then
-            echo "Subscription is already in $TARGET_MG. Moving to Tenant Root Group to prevent conflicts..."
-            az account management-group subscription remove \
-              --name "$TARGET_MG" \
-              --subscription "$SUBSCRIPTION_ID" || true
-            sleep 2
+          for MG in $ALL_MGS; do
+            echo "Checking $MG..."
+            if az account management-group subscription show \
+              --name "$MG" \
+              --subscription "$SUBSCRIPTION_ID" \
+              --query "id" -o tsv 2>/dev/null | grep -q "$SUBSCRIPTION_ID"; then
+              echo "  Subscription found in $MG. Removing..."
+              az account management-group subscription remove \
+                --name "$MG" \
+                --subscription "$SUBSCRIPTION_ID" 2>&1 || true
+              sleep 1
+            fi
+          done
+          
+          # Ensure subscription is in Tenant Root Group
+          echo "Ensuring subscription is in Tenant Root Group..."
+          if ! az account management-group subscription show \
+            --name "$TENANT_ROOT_GROUP_ID" \
+            --subscription "$SUBSCRIPTION_ID" \
+            --query "id" -o tsv 2>/dev/null | grep -q "$SUBSCRIPTION_ID"; then
+            echo "  Adding subscription to Tenant Root Group..."
             az account management-group subscription add \
               --name "$TENANT_ROOT_GROUP_ID" \
-              --subscription "$SUBSCRIPTION_ID" || true
-            echo "Subscription moved to Tenant Root Group. Template will move it to $TARGET_MG during deployment."
+              --subscription "$SUBSCRIPTION_ID" 2>&1 || true
           else
-            echo "Subscription is not in $TARGET_MG. No action needed."
+            echo "  Subscription already in Tenant Root Group."
           fi
+          
+          # Wait a bit for propagation
+          echo "Waiting 5 seconds for changes to propagate..."
+          sleep 5
+          
+          # Verify final state
+          echo "Verifying subscription location..."
+          CURRENT_MG=$(az account show --query "managementGroupId" -o tsv 2>/dev/null || echo "")
+          if [ -z "$CURRENT_MG" ] || [ "$CURRENT_MG" == "$TENANT_ROOT_GROUP_ID" ]; then
+            echo "✓ Subscription is ready in Tenant Root Group"
+          else
+            echo "⚠ Warning: Subscription may still be in $CURRENT_MG"
+          fi
+          echo "=========================================="
 
       - name: Create Resource Group (if not exists)
         run: |
