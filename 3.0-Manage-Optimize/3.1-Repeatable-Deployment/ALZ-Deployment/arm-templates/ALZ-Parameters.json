@@ -156,7 +156,7 @@
       "value": "Yes"
     },
     "enablePrivateDnsZones": {
-      "value": "Yes"
+      "value": "No"
     },
     "privateDnsZonesToDeploy": {
       "value": [
