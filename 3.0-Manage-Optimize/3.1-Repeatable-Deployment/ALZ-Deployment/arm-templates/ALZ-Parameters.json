@@ -93,7 +93,7 @@
       "value": "Yes"
     },
     "enableMonitorBaselines": {
-      "value": "Yes"
+      "value": "No"
     },
     "enableMonitorConnectivity": {
       "value": "Yes"
