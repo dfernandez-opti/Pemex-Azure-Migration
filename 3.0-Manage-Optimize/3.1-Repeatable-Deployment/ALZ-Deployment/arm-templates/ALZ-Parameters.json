@@ -1,0 +1,803 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "enterpriseScaleCompanyPrefix": {
+      "value": "Pemex"
+    },
+    "singlePlatformSubscriptionId": {
+      "value": "fbd7f286-5077-483f-8817-351e38bea77f"
+    },
+    "enablePrivateSubnet": {
+      "value": "Audit"
+    },
+    "telemetryOptOut": {
+      "value": "No"
+    },
+    "enableLogAnalytics": {
+      "value": "Yes"
+    },
+    "laCategory": {
+      "value": "allLogs"
+    },
+    "retentionInDays": {
+      "value": "30"
+    },
+    "securitySubscriptionId": {
+      "value": null
+    },
+    "managementSubscriptionId": {
+      "value": null
+    },
+    "enableChangeTracking": {
+      "value": "Yes"
+    },
+    "enableUpdateMgmt": {
+      "value": "Yes"
+    },
+    "enableVmInsights": {
+      "value": "Yes"
+    },
+    "enableAsc": {
+      "value": "Yes"
+    },
+    "emailContactAsc": {
+      "value": "administrador@PEMEXDEV.onmicrosoft.com"
+    },
+    "enableAscForServers": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForServersVulnerabilityAssessments": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForOssDb": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForCosmosDbs": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForAppServices": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForStorage": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForSql": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForSqlOnVm": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForKeyVault": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForArm": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForApis": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForCspm": {
+      "value": "DeployIfNotExists"
+    },
+    "enableAscForContainers": {
+      "value": "DeployIfNotExists"
+    },
+    "enableMDEndpoints": {
+      "value": "DeployIfNotExists"
+    },
+    "enableServiceHealth": {
+      "value": null
+    },
+    "enableServiceHealthBuiltIn": {
+      "value": "Yes"
+    },
+    "enableMonitorBaselines": {
+      "value": "Yes"
+    },
+    "enableMonitorConnectivity": {
+      "value": "Yes"
+    },
+    "enableMonitorIdentity": {
+      "value": "Yes"
+    },
+    "enableMonitorManagement": {
+      "value": "Yes"
+    },
+    "monitorAlertsResourceGroup": {
+      "value": "rg-alz-monitoring-001"
+    },
+    "userAssignedManagedIdentityName": {
+      "value": "id-amba-prod-001"
+    },
+    "ambaAgEmailContact": {
+      "value": "administrador@PEMEXDEV.onmicrosoft.com"
+    },
+    "ambaAgServiceHook": {
+      "value": null
+    },
+    "enableAMBAHybridVM": {
+      "value": "Yes"
+    },
+    "enableAMBAKeyManagement": {
+      "value": "Yes"
+    },
+    "enableAMBALoadBalancing": {
+      "value": "Yes"
+    },
+    "enableAMBANetworkChanges": {
+      "value": "Yes"
+    },
+    "enableAMBARecoveryServices": {
+      "value": "Yes"
+    },
+    "enableAMBAStorage": {
+      "value": "Yes"
+    },
+    "enableAMBAVM": {
+      "value": "Yes"
+    },
+    "enableAMBAWeb": {
+      "value": "Yes"
+    },
+    "connectivitySubscriptionId": {
+      "value": "fbd7f286-5077-483f-8817-351e38bea77f"
+    },
+    "addressPrefix": {
+      "value": "10.100.0.0/16"
+    },
+    "connectivityLocation": {
+      "value": "westus2"
+    },
+    "deployAVNM": {
+      "value": null
+    },
+    "enableDdoS": {
+      "value": "Yes"
+    },
+    "enablePrivateDnsZones": {
+      "value": "Yes"
+    },
+    "privateDnsZonesToDeploy": {
+      "value": [
+        "privatelink.blob.core.windows.net",
+        "privatelink.file.core.windows.net",
+        "privatelink.queue.core.windows.net",
+        "privatelink.table.core.windows.net",
+        "privatelink.dfs.core.windows.net",
+        "privatelink.database.windows.net",
+        "privatelink.documents.azure.com",
+        "privatelink.vaultcore.azure.net",
+        "privatelink.azurewebsites.net",
+        "privatelink.servicebus.windows.net",
+        "privatelink.eventgrid.azure.net",
+        "privatelink.wus2.backup.windowsazure.com"
+      ]
+    },
+    "enableVpnGw": {
+      "value": "No"
+    },
+    "enableVpnActiveActive": {
+      "value": null
+    },
+    "gwRegionalOrAz": {
+      "value": null
+    },
+    "gwRegionalSku": {
+      "value": null
+    },
+    "gwAzSku": {
+      "value": null
+    },
+    "vpnGateWayScaleUnit": {
+      "value": null
+    },
+    "subnetMaskForGw": {
+      "value": null
+    },
+    "enableErGw": {
+      "value": "No"
+    },
+    "erAzSku": {
+      "value": null
+    },
+    "erRegionalSku": {
+      "value": null
+    },
+    "erRegionalOrAz": {
+      "value": null
+    },
+    "expressRouteScaleUnit": {
+      "value": null
+    },
+    "enableHub": {
+      "value": "vhub"
+    },
+    "enableAzFw": {
+      "value": "Yes"
+    },
+    "enableAzFwDnsProxy": {
+      "value": "No"
+    },
+    "firewallSku": {
+      "value": "Premium"
+    },
+    "firewallZones": {
+      "value": [
+        "1"
+      ]
+    },
+    "subnetMaskForAzFw": {
+      "value": "10.100.0.0/24"
+    },
+    "subnetMaskForAzFwMgmt": {
+      "value": null
+    },
+    "enablevWANRoutingIntent": {
+      "value": null
+    },
+    "internetTrafficRoutingPolicy": {
+      "value": null
+    },
+    "privateTrafficRoutingPolicy": {
+      "value": null
+    },
+    "vWANHubRoutingPreference": {
+      "value": null
+    },
+    "vWANHubCapacity": {
+      "value": null
+    },
+    "addressPrefixSecondary": {
+      "value": "10.200.0.0/16"
+    },
+    "connectivityLocationSecondary": {
+      "value": "westus2"
+    },
+    "enablePrivateDnsZonesSecondary": {
+      "value": "No"
+    },
+    "enableVpnGwSecondary": {
+      "value": "No"
+    },
+    "enableVpnActiveActiveSecondary": {
+      "value": null
+    },
+    "gwRegionalOrAzSecondary": {
+      "value": null
+    },
+    "gwRegionalSkuSecondary": {
+      "value": null
+    },
+    "gwAzSkuSecondary": {
+      "value": null
+    },
+    "vpnGateWayScaleUnitSecondary": {
+      "value": null
+    },
+    "subnetMaskForGwSecondary": {
+      "value": null
+    },
+    "enableErGwSecondary": {
+      "value": "No"
+    },
+    "erAzSkuSecondary": {
+      "value": null
+    },
+    "erRegionalSkuSecondary": {
+      "value": null
+    },
+    "erRegionalOrAzSecondary": {
+      "value": null
+    },
+    "expressRouteScaleUnitSecondary": {
+      "value": null
+    },
+    "enableSecondaryRegion": {
+      "value": "Yes"
+    },
+    "enableHubSecondary": {
+      "value": "vhub"
+    },
+    "enableAzFwSecondary": {
+      "value": "Yes"
+    },
+    "enableAzFwDnsProxySecondary": {
+      "value": "No"
+    },
+    "firewallSkuSecondary": {
+      "value": "Premium"
+    },
+    "firewallZonesSecondary": {
+      "value": [
+        "1"
+      ]
+    },
+    "subnetMaskForAzFwSecondary": {
+      "value": "10.200.0.0/24"
+    },
+    "subnetMaskForAzFwMgmtSecondary": {
+      "value": null
+    },
+    "enablevWANRoutingIntentSecondary": {
+      "value": null
+    },
+    "internetTrafficRoutingPolicySecondary": {
+      "value": null
+    },
+    "privateTrafficRoutingPolicySecondary": {
+      "value": null
+    },
+    "vWANHubRoutingPreferenceSecondary": {
+      "value": null
+    },
+    "vWANHubCapacitySecondary": {
+      "value": null
+    },
+    "identitySubscriptionId": {
+      "value": null
+    },
+    "denyMgmtPortsForIdentity": {
+      "value": "Yes"
+    },
+    "denySubnetWithoutNsgForIdentity": {
+      "value": "Yes"
+    },
+    "denyPipForIdentity": {
+      "value": null
+    },
+    "enableVmBackupForIdentity": {
+      "value": "Yes"
+    },
+    "identityAddressPrefix": {
+      "value": null
+    },
+    "identityAddressPrefixSecondary": {
+      "value": null
+    },
+    "corpConnectedLzSubscriptionId": {
+      "value": null
+    },
+    "corpLzSubscriptionId": {
+      "value": []
+    },
+    "onlineLzSubscriptionId": {
+      "value": []
+    },
+    "enableLzDdoS": {
+      "value": "Audit"
+    },
+    "denyPublicEndpoints": {
+      "value": "Audit"
+    },
+    "denyPipOnNicForCorp": {
+      "value": "Yes"
+    },
+    "enablePrivateDnsZonesForLzs": {
+      "value": "Audit"
+    },
+    "enableEncryptionInTransit": {
+      "value": "Audit"
+    },
+    "enableVmMonitoring": {
+      "value": "Audit"
+    },
+    "enableVmssMonitoring": {
+      "value": "Audit"
+    },
+    "enableVmHybridMonitoring": {
+      "value": "Audit"
+    },
+    "denyAksPrivileged": {
+      "value": "Audit"
+    },
+    "denyAksPrivilegedEscalation": {
+      "value": "Audit"
+    },
+    "denyClassicResources": {
+      "value": "Yes"
+    },
+    "denyVMUnmanagedDisk": {
+      "value": "Yes"
+    },
+    "denyHttpIngressForAks": {
+      "value": "Audit"
+    },
+    "enableVmBackup": {
+      "value": "Audit"
+    },
+    "denyMgmtPorts": {
+      "value": "Audit"
+    },
+    "denySubnetWithoutNsg": {
+      "value": "Audit"
+    },
+    "denyIpForwarding": {
+      "value": "Audit"
+    },
+    "enableSqlEncryption": {
+      "value": "Audit"
+    },
+    "enableSqlThreat": {
+      "value": "Audit"
+    },
+    "enableDecommissioned": {
+      "value": "Yes"
+    },
+    "enableSandbox": {
+      "value": "Yes"
+    },
+    "enableSqlAudit": {
+      "value": "Audit"
+    },
+    "enableStorageHttps": {
+      "value": "Audit"
+    },
+    "enforceKvGuardrails": {
+      "value": "Audit"
+    },
+    "enforceBackup": {
+      "value": "Audit"
+    },
+    "enforceKvGuardrailsPlat": {
+      "value": "Audit"
+    },
+    "enforceBackupPlat": {
+      "value": "Audit"
+    },
+    "enableGuestAttestationPlat": {
+      "value": "Yes"
+    },
+    "enableGuestAttestationLZ": {
+      "value": "Yes"
+    },
+    "denyHybridNetworking": {
+      "value": "Audit"
+    },
+    "auditPeDnsZones": {
+      "value": "Yes"
+    },
+    "auditAppGwWaf": {
+      "value": "Audit"
+    },
+    "enforceAcsb": {
+      "value": "Audit"
+    },
+    "currentDateTimeUtcNow": {
+      "value": null
+    },
+    "enableWsCMKInitiatives": {
+      "value": "Audit"
+    },
+    "wsCMKSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsAPIMInitiatives": {
+      "value": "Audit"
+    },
+    "wsAPIMSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsAppServicesInitiatives": {
+      "value": "Audit"
+    },
+    "wsAppServicesSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsAutomationInitiatives": {
+      "value": "Audit"
+    },
+    "wsAutomationSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsBotServiceInitiatives": {
+      "value": "Audit"
+    },
+    "wsBotServiceSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsCognitiveServicesInitiatives": {
+      "value": "Audit"
+    },
+    "wsCognitiveServicesSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsComputeInitiatives": {
+      "value": "Audit"
+    },
+    "wsComputeSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsContainerAppsInitiatives": {
+      "value": "Audit"
+    },
+    "wsContainerAppsSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsContainerInstanceInitiatives": {
+      "value": "Audit"
+    },
+    "wsContainerInstanceSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsContainerRegistryInitiatives": {
+      "value": "Audit"
+    },
+    "wsContainerRegistrySelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsCosmosDbInitiatives": {
+      "value": "Audit"
+    },
+    "wsCosmosDbSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsDataExplorerInitiatives": {
+      "value": "Audit"
+    },
+    "wsDataExplorerSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsDataFactoryInitiatives": {
+      "value": "Audit"
+    },
+    "wsDataFactorySelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsEventGridInitiatives": {
+      "value": "Audit"
+    },
+    "wsEventGridSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsEventHubInitiatives": {
+      "value": "Audit"
+    },
+    "wsEventHubSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsKeyVaultSupInitiatives": {
+      "value": "Audit"
+    },
+    "wsKeyVaultSupSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsKubernetesInitiatives": {
+      "value": "Audit"
+    },
+    "wsKubernetesSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsMachineLearningInitiatives": {
+      "value": "Audit"
+    },
+    "wsMachineLearningSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsMySQLInitiatives": {
+      "value": "Audit"
+    },
+    "wsMySQLSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsNetworkInitiatives": {
+      "value": "Audit"
+    },
+    "wsNetworkSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsOpenAIInitiatives": {
+      "value": "Audit"
+    },
+    "wsOpenAISelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsPostgreSQLInitiatives": {
+      "value": "Audit"
+    },
+    "wsPostgreSQLSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsServiceBusInitiatives": {
+      "value": "Audit"
+    },
+    "wsServiceBusSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsSQLInitiatives": {
+      "value": "Audit"
+    },
+    "wsSQLSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsStorageInitiatives": {
+      "value": "Audit"
+    },
+    "wsStorageSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsSynapseInitiatives": {
+      "value": "Audit"
+    },
+    "wsSynapseSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "enableWsVirtualDesktopInitiatives": {
+      "value": "Audit"
+    },
+    "wsVirtualDesktopSelectorMG": {
+      "value": [
+        "pemex-platform",
+        "pemex-landingzones"
+      ]
+    },
+    "regulatoryComplianceInitativesToAssign": {
+      "value": null
+    },
+    "regCompPolParAusGovIsmRestrictedVmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParAusGovIsmRestrictedResourceTypes": {
+      "value": null
+    },
+    "regCompPolParMPAACertificateThumb": {
+      "value": null
+    },
+    "regCompPolParMPAAApplicationName": {
+      "value": null
+    },
+    "regCompPolParMPAAStoragePrefix": {
+      "value": null
+    },
+    "regCompPolParMPAAResGroupPrefix": {
+      "value": null
+    },
+    "regCompPolParMPAARBatchMetricName": {
+      "value": null
+    },
+    "regCompPolParSovBaseConfRegions": {
+      "value": null
+    },
+    "regCompPolParSovBaseGlobalRegions": {
+      "value": null
+    },
+    "regCompPolParSwift2020VmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParSwift2020DomainFqdn": {
+      "value": null
+    },
+    "regCompPolParCanadaFedPbmmVmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParCanadaFedPbmmVmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParCisV2KeyVaultKeysRotateDays": {
+      "value": 90
+    },
+    "regCompPolParCmmcL3VmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParCmmcL3VmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParHitrustHipaaApplicationName": {
+      "value": null
+    },
+    "regCompPolParHitrustHipaaStoragePrefix": {
+      "value": null
+    },
+    "regCompPolParHitrustHipaaResGroupPrefix": {
+      "value": null
+    },
+    "regCompPolParHitrustHipaaCertificateThumb": {
+      "value": null
+    },
+    "regCompPolParIrs1075Sep2016VmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParIrs1075Sep2016VmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParNZIsmRestrictedVmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParNZIsmRestrictedVmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParNistSp800171R2VmAdminsExclude": {
+      "value": null
+    },
+    "regCompPolParNistSp800171R2VmAdminsInclude": {
+      "value": null
+    },
+    "regCompPolParSoc2Type2AllowedRegistries": {
+      "value": null
+    },
+    "regCompPolParSoc2Type2MaxCpuUnits": {
+      "value": null
+    },
+    "regCompPolParSoc2Type2MaxMemoryBytes": {
+      "value": null
+    }
+  }
+}
